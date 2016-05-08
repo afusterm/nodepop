@@ -1,0 +1,50 @@
+[
+  {
+    "nombre": "Bicicleta",
+    "venta": true,
+    "precio": 230.15,
+    "foto": "/images/bici.jpg",
+    "tags": [ "lifestyle", "motor"]
+  }, {
+    "nombre": "iPhone 3GS",
+    "venta": false,
+    "precio": 50.00,
+    "foto": "/images/iphone.jpg",
+    "tags": [ "lifestyle", "mobile"]
+  },
+  {
+    "nombre": "Samsung Galaxy S6",
+    "venta": true,
+    "precio": 450.00,
+    "foto": "/images/s6.jpeg",
+    "tags": ["mobile", "android"]
+  },
+  {
+    "nombre": "Samsung Galaxy S6",
+    "venta": false,
+    "precio": 250.00,
+    "foto": "/images/s6.jpeg",
+    "tags": ["mobile", "android"]
+  },
+  {
+    "nombre": "MacBook Pro 13",
+    "venta": true,
+    "precio": 1400.00,
+    "foto": "/images/mbpro13.jpg",
+    "tags": ["laptop", "apple"]
+  },
+  {
+    "nombre": "BMW Trail 1200 GS",
+    "venta": true,
+    "precio": 4000,
+    "foto": "/images/bmwtrail.jpeg",
+    "tags": ["lifestyle", "motor", "motorcycle"]
+  },
+  {
+    "nombre": "Nintendo",
+    "venta": false,
+    "precio": 50.00,
+    "foto": "/images/nes.jpeg",
+    "tags": ["videogames", "leisure"]
+  }
+]
