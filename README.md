@@ -1,11 +1,19 @@
 # nodepop Práctica node-js
 
+## Información de la aplicación para DevOps
+
+- Para acceder al servidor y hacer peticiones a la API de nodepop usar la siguiente url: http://nodepop.alejandrofuster.es
+
+- Para acceder a la web del ejercicio 2 usar la url http://23.22.50.24
+
 ## Para poner en marcha la aplicación nodepop seguir los siguientes pasos:
 
-1. Ejecutar startDB.sh para iniciar la base de datos. Este script crea anuncios y un usuario. El usuario tiene el email
+1. Ejecutar `startDB.sh` para crear el directorio donde se almacenarán los datos e iniciar el servidor MongoDB.
+
+2. Ejecutar `npm run installDB` para iniciar la base de datos. Este script crea anuncios y un usuario. El usuario tiene el email
 blas@gmail.com y la clave 'blas'.
 
-2. Ejecutar `npm run start` para iniciar la aplicación, o `npm run startdeb` para iniciar la aplicación en modo depuración.
+3. Ejecutar `npm run start` para iniciar la aplicación, o `npm run startdeb` para iniciar la aplicación en modo depuración.
 
 ## Documentación del API
 

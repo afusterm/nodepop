@@ -41,3 +41,7 @@ db
 
 # WebStorm config
 .idea
+
+# ignore mac directory
+.DS_Store
+
