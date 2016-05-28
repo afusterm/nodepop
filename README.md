@@ -10,10 +10,12 @@
 
 1. Ejecutar `startDB.sh` para crear el directorio donde se almacenarán los datos e iniciar el servidor MongoDB.
 
-2. Ejecutar `npm run installDB` para iniciar la base de datos. Este script crea anuncios y un usuario. El usuario tiene el email
+2. Instalar los módulos que necesita la aplicación con `npm install`.
+
+3. Ejecutar `npm run installDB` para iniciar la base de datos. Este script crea anuncios y un usuario. El usuario tiene el email
 blas@gmail.com y la clave 'blas'.
 
-3. Ejecutar `npm run start` para iniciar la aplicación, o `npm run startdeb` para iniciar la aplicación en modo depuración.
+4. Ejecutar `npm run start` para iniciar la aplicación, o `npm run startdeb` para iniciar la aplicación en modo depuración.
 
 ## Documentación del API
 
