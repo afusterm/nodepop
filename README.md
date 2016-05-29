@@ -4,6 +4,11 @@
 
 - Para acceder al servidor y hacer peticiones a la API de nodepop usar la siguiente url: http://nodepop.alejandrofuster.es
 
+    Para probar el servicio se podría usar el usuario existente blas@gmail.com con la clave *blas* haciendo un POST a la url http://nodepop.alejandrofuster.es/api/v1/usuarios/authenticate
+    
+    En el body de la petición se pondrían los campos *email* y *clave* con los valores blas@gmail.com y *blas* respectivamente.
+     
+
 - Para acceder a la web del ejercicio 2 usar la url http://23.22.50.24
 
 ## Para poner en marcha la aplicación nodepop seguir los siguientes pasos:
