@@ -3,6 +3,7 @@
 // create the connection to nodepop database
 var mongo = require('mongodb').MongoClient;
 var fs = require('fs');
+var readline = require('readline');
 
 mongo.connect('mongodb://localhost:27017/nodepop', function(err, db) {
     if (err) {
@@ -11,17 +12,28 @@ mongo.connect('mongodb://localhost:27017/nodepop', function(err, db) {
         return;
     }
 
-    // borrar la colección de usuarios
-    db.collection('usuarios').drop();
-    // borrar la colección de anuncios
-    db.collection('anuncios').drop();
+    let rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    
+    rl.question('Se van a borrar las colecciones de usuarios y anuncios. ¿Continuar? [s/n] ', answer => {
+        if (answer === 'S' || answer === 's') {
+            // borrar la colección de usuarios
+            db.collection('usuarios').drop();
+            // borrar la colección de anuncios
+            db.collection('anuncios').drop();
+        }
 
-    loadUsers(db)
-        .then(loadAdvertisements)
-        .then(disconnect)
-        .catch(function(err) {
-            console.error(err);
-        });
+        loadUsers(db)
+            .then(loadAdvertisements)
+            .then(disconnect)
+            .catch(function(err) {
+                console.error(err);
+            });
+
+        rl.close();
+    });
 });
 
 function loadUsers(db) {

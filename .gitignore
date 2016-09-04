@@ -45,3 +45,5 @@ db
 # ignore mac directory
 .DS_Store
 
+# directory for db logs
+dblogs

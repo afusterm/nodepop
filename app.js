@@ -11,6 +11,10 @@ var users = require('./routes/users');
 
 var app = express();
 
+var i18n = new (require('i18n-2')) ({
+    locales: ['en', 'es']
+});
+
 // conexión con la base de datos
 require('./lib/connectMongoose');
 
@@ -41,9 +45,10 @@ app.use('/api/v1/pushtoken', require('./routes/api/v1/pushtoken'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    let lang = req.headers.lang || 'en';
+    i18n.setLocale(lang);
+
+    return res.status(404).json({success: false, error: i18n.__('Path does not exist')});
 });
 
 // error handlers

@@ -6,5 +6,6 @@
 	"PushToken validation failed": "Falló la validación del push token",
 	"User %s does not exist": "El usuario %s no existe",
 	"Failed to authenticate token.": "Falló la autenticación del token.",
-	"No token provided.": "Token no proporcionado."
+	"No token provided.": "Token no proporcionado.",
+	"Path does not exist": "La ruta no existe"
 }
