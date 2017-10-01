@@ -32,7 +32,7 @@ router.post('/', function(req, res) {
     // validar que los campos obligatorios estén informados
     let errors = usuario.validateSync();
     if (errors) {
-        return res.json({ success: false, error: i18n.__(errors.message )});
+        return res.status(400).json({ success: false, error: i18n.__(errors.message )});
     }
 
     // encriptar la clave del usuario
@@ -42,7 +42,7 @@ router.post('/', function(req, res) {
         // guardar el usuario en la base de datos
         usuario.save(function(err, saved) {
             if (err) {
-                return res.json({ success: false, error: i18n.__(err.message) });
+                return res.status(400).json({ success: false, error: i18n.__(err.message) });
             }
 
             res.json({ success: true, saved: saved });
