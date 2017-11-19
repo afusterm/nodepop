@@ -35,19 +35,26 @@ router.post('/', function(req, res) {
         return res.status(400).json({ success: false, error: i18n.__(errors.message )});
     }
 
-    // encriptar la clave del usuario
-    bcrypt.hash(usuario.clave, SALT_ROUNDS, function(err, hash) {
-        usuario.clave = hash;
+    Usuario.findOne({ email: usuario.email }, (err, user) => {
+        // si el usuario existe devolver error
+        if (user != null) {
+            return res.status(409).json({ success: false, error: i18n.__(`Email ${usuario.email} already exists`) })
+        }
 
-        // guardar el usuario en la base de datos
-        usuario.save(function(err, saved) {
-            if (err) {
-                return res.status(400).json({ success: false, error: i18n.__(err.message) });
-            }
+        // encriptar la clave del usuario
+        bcrypt.hash(usuario.clave, SALT_ROUNDS, function(err, hash) {
+            usuario.clave = hash;
 
-            res.json({ success: true, saved: saved });
+            // guardar el usuario en la base de datos
+            usuario.save(function(err, saved) {
+                if (err) {
+                    return res.status(400).json({ success: false, error: i18n.__(err.message) });
+                }
+
+                res.json({ success: true, saved: saved });
+            });
         });
-    });
+    })
 });
 
 /**

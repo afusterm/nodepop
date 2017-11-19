@@ -18,4 +18,4 @@ var usuarioSchema = mongoose.Schema({
     }
 });
 
-mongoose.model('Usuario', usuarioSchema);
+module.exports = mongoose.model('Usuario', usuarioSchema);

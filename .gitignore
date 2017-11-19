@@ -47,3 +47,8 @@ db
 
 # directory for db logs
 dblogs
+
+.tags*
+tags
+
+config

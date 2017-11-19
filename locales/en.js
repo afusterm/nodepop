@@ -7,5 +7,7 @@
 	"Failed to authenticate token.": "Failed to authenticate token.",
 	"Path does not exist": "Path does not exist",
 	"Usuario validation failed: clave: Path `clave` is required., email: Path `email` is required., nombre: Path `nombre` is required.": "Usuario validation failed: clave: Path `clave` is required., email: Path `email` is required., nombre: Path `nombre` is required.",
-	"Usuario validation failed: clave: Path `clave` is required., email: Path `email` is required.": "Usuario validation failed: clave: Path `clave` is required., email: Path `email` is required."
+	"Usuario validation failed: clave: Path `clave` is required., email: Path `email` is required.": "Usuario validation failed: clave: Path `clave` is required., email: Path `email` is required.",
+	"Auth failed. User not found": "Auth failed. User not found",
+	"Auth failed. Invalid password.": "Auth failed. Invalid password."
 }
