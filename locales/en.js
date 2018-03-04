@@ -9,5 +9,6 @@
 	"Usuario validation failed: clave: Path `clave` is required., email: Path `email` is required., nombre: Path `nombre` is required.": "Usuario validation failed: clave: Path `clave` is required., email: Path `email` is required., nombre: Path `nombre` is required.",
 	"Usuario validation failed: clave: Path `clave` is required., email: Path `email` is required.": "Usuario validation failed: clave: Path `clave` is required., email: Path `email` is required.",
 	"Auth failed. User not found": "Auth failed. User not found",
-	"Auth failed. Invalid password.": "Auth failed. Invalid password."
+	"Auth failed. Invalid password.": "Auth failed. Invalid password.",
+	"PushToken validation failed: token: Path `token` is required., plataforma: Path `plataforma` is required.": "PushToken validation failed: token: Path `token` is required., plataforma: Path `plataforma` is required."
 }

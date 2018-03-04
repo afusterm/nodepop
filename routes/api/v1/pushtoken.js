@@ -11,6 +11,7 @@ var i18n = new (require('i18n-2')) ({
     locales: ['en', 'es']
 });
 
+const HttpStatus = require('http-status-codes');
 
 /**
  *  Guarda en la colección pushtokens el token de push para notificaciones a dispositivos Android e IOS.
@@ -18,6 +19,7 @@ var i18n = new (require('i18n-2')) ({
  *  @param plataforma Nombre de la plataforma que recibirá notifiaciones. Valores posibles: android, ios
  *  @param token Token de la plataforma para enviar notifiaciones.
  *  @param usuario Parámetro opcional para indicar a qué usuario pertenece el token de push.
+ *  @param lang Idioma de los mensajes.
  */
 router.get('/', function(req, res) {
     let pushtoken = new PushToken(req.query);
@@ -34,7 +36,7 @@ router.get('/', function(req, res) {
 
         res.json({ success: true, saved });
     }
-    
+
     // validar que los campos obligatorios estén informados
     let errors = pushtoken.validateSync();
     if (errors) {
@@ -46,7 +48,7 @@ router.get('/', function(req, res) {
         Usuario.findOne({ _id: usuario }, function(err, user) {
             if (err) {
                 // el usuario no existe en la base de datos de usuario. Se devuelve error.
-                return res.json({ success: false, error: i18n.__('User %s does not exist', usuario) });
+                return res.status(HttpStatus.BAD_REQUEST).json({ success: false, error: i18n.__('User %s does not exist', usuario) });
             }
 
             pushtoken.save(saveCallback);
