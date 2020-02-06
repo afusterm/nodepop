@@ -36,18 +36,28 @@ router.post('/', function(req, res) {
         if (user != null) {
             return res.status(HttpStatus.CONFLICT).json({ success: false, error: i18n.__(`Email ${usuario.email} already exists`) })
         }
-
+        
         // encriptar la clave del usuario
-        bcrypt.hash(usuario.clave, config.SALT_ROUNDS, function(err, hash) {
-            usuario.clave = hash;
+        bcrypt.genSalt(config.SALT_ROUNDS, (err, salt) => {
+            if (err) {
+                throw new Error(`router.post: ${err}`);
+            }
 
-            // guardar el usuario en la base de datos
-            usuario.save(function(err, saved) {
+            bcrypt.hash(usuario.clave, salt, function(err, hash) {
+                usuario.clave = hash;
+    
                 if (err) {
-                    return res.status(HttpStatus.BAD_REQUEST).json({ success: false, error: i18n.__(err.message) });
+                    throw new Error(`router.post: ${err}`);
                 }
-
-                res.json({ success: true, saved: saved });
+    
+                // guardar el usuario en la base de datos
+                usuario.save(function(err, saved) {
+                    if (err) {
+                        return res.status(HttpStatus.BAD_REQUEST).json({ success: false, error: i18n.__(err.message) });
+                    }
+    
+                    res.json({ success: true, saved: saved });
+                });
             });
         });
     })
