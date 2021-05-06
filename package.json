@@ -22,7 +22,7 @@
     "i18n-2": "^0.6.3",
     "jshint": "^2.11.0",
     "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mongodb": "^3.5.2",
     "mongoose": "^5.8.11",
     "morgan": "^1.9.1",
